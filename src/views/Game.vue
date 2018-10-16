@@ -29,14 +29,14 @@ export default {
 
 //new Vue({
   //  el: '#app',
-  data: {
+  data: () => ({
     active: false,
     //numClicks: "",
     template: "<b>{{ numClicks }}</b>",
     numClicks: 0,
     secs: 10,
     colors:["#9bcd77","#d777b0","#fed401","#ff2c3c","#66c652"]
-  },
+  }),
 
     ready:function(){
         var self = this;

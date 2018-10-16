@@ -3,12 +3,12 @@
   
   <div class="example">
     <h3>Näited</h3>
-    <p>Lorem ipsum dolor</p>
+    <p>Vali näide</p>
   
   
     <div id="naide1">
       <button v-on:click="show = !show">Vajuta</button>
-    <transititon name="fade">
+    <transititon name="fade"><br></br>
       <p v-if="show">Hello!</p>
     </transititon>
     </div>
@@ -21,11 +21,10 @@
 export default {
   name: "NewExample",
 
-
-el: "#naide1",
-data: {
+//el: "#naide1",
+data: () => ({
   show: true
-}
+}),
 };
 </script>
 
