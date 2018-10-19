@@ -5,12 +5,25 @@
     <h3>Näited</h3>
     <p>Vali näide</p>
   
-  
-    <div id="naide1">
-      <button v-on:click="show = !show">Vajuta</button>
-    <transititon name="fade"><br></br>
-      <p v-if="show">Hello!</p>
+    <div class="col-md-8">
+
+    <div><br></br>
+      <input v-model="naide1">
+      <p>{{ naide1 }}</p>
+    </div><br></br>
+
+    <div>
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Pööra ümber</button><br></br>
+    </div><br></br>
+
+    <div> 
+    <transititon name="fade">
+      <p v-if="show">Tervitus!</p>
     </transititon>
+    <button v-on:click="show = !show">Kaota-taasta</button>
+    </div>    
+
     </div>
   </div>
   
@@ -21,10 +34,17 @@
 export default {
   name: "NewExample",
 
-//el: "#naide1",
 data: () => ({
+  naide1: "kirjuta siia",
+  message: "lehmad söövad haljal karjamaal",
   show: true
 }),
+      
+  methods: {
+  reverseMessage: function () {
+    this.message = this.message.split(' ').reverse().join(' ')
+  }
+},
 };
 </script>
 
